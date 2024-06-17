@@ -1,9 +1,17 @@
+import { currentUser } from '@clerk/nextjs/server'
 import React from 'react'
 
-const LandingPageNavbar = () => {
+async function LandingPageNavbar() {
+    const user = await currentUser()
+    if(!user)
   return (
-    <div>LandingPageNavbar</div>
+    <div>Please sign in</div>
   )
+  else{
+    return(
+        <div>Hello {user.firstName}</div>
+    )
+  }
 }
 
 export default LandingPageNavbar
