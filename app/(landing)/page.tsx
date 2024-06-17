@@ -3,7 +3,7 @@ import React from 'react'
 
 const LandingPage = () => {
   return (
-    <UserButton afterSignOutUrl='/'/>
+    <div>Landing Page</div>
   )
 }
 
