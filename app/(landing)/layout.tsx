@@ -1,24 +1,21 @@
-
-import { Inter } from "next/font/google";
+import React from "react";
 import LandingPageNavbar from "./components/LandingPageNavbar";
+import LandingPageFooter from "./components/LandingPageFooter";
 
-
-
-const inter = Inter({ subsets: ["latin"] });
-
-
-
-export default function RootLayout({
-  children,
-}: Readonly<{
+function LandingLayout({
+  children, // will be a page or nested layout
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <section className="flex min-h-screen flex-col overflow-x-clip">
-        <LandingPageNavbar />
-    
-    <div className="flex-grow">{children}</div>
+      <LandingPageNavbar />
+
+      <div className="flex-grow">{children}</div>
+
+      <LandingPageFooter />
     </section>
-    
   );
 }
+
+export default LandingLayout;
